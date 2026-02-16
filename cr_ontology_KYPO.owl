@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:cr="http://example.org/cr-ontology#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasPurpose">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Purpose"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#targetsDidactics">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Didactics"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#producesInformation">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#isProducedBy">
+        <rdfs:domain rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+        <rdfs:range rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#supportsCapability">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://example.org/cr-ontology#hasFunctionalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#enablesCapability"/>
+    </owl:propertyChainAxiom>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_CyberRangePlatform">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+    <cr:hasName>KYPO Cyber Range Platform</cr:hasName>
+    <cr:hasDescription>Open-source cyber range platform developed by Masaryk University for hands-on cybersecurity training and cyber defense exercises.</cr:hasDescription>
+    <cr:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">as described in public documentation and literature</cr:hasVersion>
+    <cr:hasDecisionalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_InfrastructureDecisions">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+        <cr:hasName>KYPO infrastructure decisional aspect</cr:hasName>
+        <cr:hasDescription>Key infrastructure design choices of KYPO CRP (delivery model, virtualization stack, governance).</cr:hasDescription>
+        <cr:hasDeliveryModel rdf:resource="http://example.org/cr-ontology#DeliveryModel_CloudBased"/>
+        <cr:hasVirtualizationTechnology rdf:resource="http://example.org/cr-ontology#VirtualizationTechnology_OpenStack"/>
+        <cr:hasGovernance rdf:resource="http://example.org/cr-ontology#Governance_MasarykUniversity"/>
+        <cr:hasInfrastructureType rdf:resource="http://example.org/cr-ontology#InfrastructureType_OpenStackCloud"/>
+        <cr:hasDomain rdf:resource="http://example.org/cr-ontology#Domain_CybersecurityTraining"/>
+        <cr:hasScope rdf:resource="http://example.org/cr-ontology#Scope_TrainingAndExercises"/>
+        <cr:constrainsFunction rdf:resource="http://example.org/cr-ontology#KYPO_InfrastructureSandboxProvisioning"/>
+        <cr:constrainsFunction rdf:resource="http://example.org/cr-ontology#KYPO_ScenarioLifecycleManagement"/>
+      </owl:NamedIndividual>
+    </cr:hasDecisionalAspect>
+    <cr:hasDecisionalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_ScopeDecisions">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+        <cr:hasName>KYPO scope decisional aspect</cr:hasName>
+        <cr:hasDescription>Pedagogical and audience-oriented choices of KYPO CRP (learning approach, evaluation practices, target users).</cr:hasDescription>
+        <cr:hasLearningMethod rdf:resource="http://example.org/cr-ontology#LearningMethod_ScenarioDrivenHandsOn"/>
+        <cr:hasEvaluationPractice rdf:resource="http://example.org/cr-ontology#EvaluationPractice_MonitoringAndAnalytics"/>
+        <cr:hasCurriculaType rdf:resource="http://example.org/cr-ontology#CurriculumType_ModularScenarios"/>
+        <cr:hasPurpose rdf:resource="http://example.org/cr-ontology#Purpose_HandsOnTrainingAndExercises"/>
+        <cr:targetsDidactics rdf:resource="http://example.org/cr-ontology#Didactics_HandsOnPractice"/>
+        <cr:definesUserType rdf:resource="http://example.org/cr-ontology#UserType_StudentsAndProfessionals"/>
+        <cr:definesUserTeam rdf:resource="http://example.org/cr-ontology#UserTeam_MultiTeamExercises"/>
+        <cr:constrainsFunction rdf:resource="http://example.org/cr-ontology#KYPO_ScenarioLifecycleManagement"/>
+      </owl:NamedIndividual>
+    </cr:hasDecisionalAspect>
+    <cr:hasFunctionalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_InfrastructureSandboxProvisioning">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#InfrastructureFunctionalAspect"/>
+        <cr:hasName>Sandbox provisioning and isolation</cr:hasName>
+        <cr:hasDescription>Provisioning of isolated virtual sandboxes and network topologies using OpenStack-managed resources.</cr:hasDescription>
+        <cr:producesInformation rdf:resource="http://example.org/cr-ontology#KYPO_TelemetryAndLogs"/>
+        <cr:enablesCapability rdf:resource="http://example.org/cr-ontology#Capability_IsolatedReproducibleSandboxes"/>
+        <cr:enablesCapability rdf:resource="http://example.org/cr-ontology#Capability_CyberDefenseExercises"/>
+      </owl:NamedIndividual>
+    </cr:hasFunctionalAspect>
+    <cr:hasFunctionalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_ScenarioLifecycleManagement">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#RLMSFunctionalAspect"/>
+        <cr:hasName>Scenario lifecycle management</cr:hasName>
+        <cr:hasDescription>Management of scenario definitions, sandbox instantiation, and training execution workflows.</cr:hasDescription>
+        <cr:producesInformation rdf:resource="http://example.org/cr-ontology#KYPO_ScenarioDefinitions"/>
+        <cr:producesInformation rdf:resource="http://example.org/cr-ontology#KYPO_EvaluationResults"/>
+        <cr:consumesInformation rdf:resource="http://example.org/cr-ontology#KYPO_ScenarioDefinitions"/>
+        <cr:enablesCapability rdf:resource="http://example.org/cr-ontology#Capability_ScenarioDrivenHandsOnTraining"/>
+        <cr:enablesCapability rdf:resource="http://example.org/cr-ontology#Capability_MultiUserMultiTeamExecution"/>
+      </owl:NamedIndividual>
+    </cr:hasFunctionalAspect>
+    <cr:hasFunctionalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_UserPortalRemoteAccess">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#UserOrientedFunctionalAspect"/>
+        <cr:hasName>Web portal and remote access</cr:hasName>
+        <cr:hasDescription>User-facing web portal for accessing sandboxes and interacting with virtual machines via SSH/VNC/SPICE or browser-based access.</cr:hasDescription>
+        <cr:consumesInformation rdf:resource="http://example.org/cr-ontology#KYPO_ScenarioDefinitions"/>
+        <cr:producesInformation rdf:resource="http://example.org/cr-ontology#KYPO_EvaluationResults"/>
+        <cr:enablesCapability rdf:resource="http://example.org/cr-ontology#Capability_RemoteAccessToSandboxResources"/>
+        <cr:enablesCapability rdf:resource="http://example.org/cr-ontology#Capability_ScenarioDrivenHandsOnTraining"/>
+      </owl:NamedIndividual>
+    </cr:hasFunctionalAspect>
+    <cr:hasInformationalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_TelemetryAndLogs">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#InfrastructureInformationalAspect"/>
+        <cr:hasName>Telemetry and runtime logs</cr:hasName>
+        <cr:hasDescription>Operational logs and telemetry produced during sandbox deployment and execution for monitoring and analysis.</cr:hasDescription>
+      </owl:NamedIndividual>
+    </cr:hasInformationalAspect>
+    <cr:hasInformationalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_ScenarioDefinitions">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#RLMSInformationalAspect"/>
+        <cr:hasName>Scenario definitions and sandbox topologies</cr:hasName>
+        <cr:hasDescription>Version-controlled definitions of scenarios and sandbox topologies (e.g., stored in Git repositories).</cr:hasDescription>
+      </owl:NamedIndividual>
+    </cr:hasInformationalAspect>
+    <cr:hasInformationalAspect>
+      <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#KYPO_EvaluationResults">
+        <rdf:type rdf:resource="http://example.org/cr-ontology#RLMSInformationalAspect"/>
+        <cr:hasName>Evaluation artifacts</cr:hasName>
+        <cr:hasDescription>Artifacts supporting learner monitoring and evaluation (e.g., progress, activity traces, assessment outputs).</cr:hasDescription>
+      </owl:NamedIndividual>
+    </cr:hasInformationalAspect>
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#definesUserType">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#UserType"/>
+  </owl:ObjectProperty>
+  <owl:AllDisjointClasses rdf:nodeID="N828b371bf1db4235ab7d4f27947cf795">
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://example.org/cr-ontology#DecisionalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#FunctionalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#InformationalAspect"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasPriority">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasTimestamp">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasLearningMethod">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#LearningMethod"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Domain"/>
+  </owl:ObjectProperty>
+  <owl:AllDisjointClasses rdf:nodeID="N5144a61e56e04e288a4b8d7e2b5ef1f4">
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://example.org/cr-ontology#InfrastructureFunctionalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#RLMSFunctionalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#UserOrientedFunctionalAspect"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#constrainsUsers">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#UserEntity"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasDuration">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+  </owl:DatatypeProperty>
+  <owl:AllDisjointClasses rdf:nodeID="N24f4bce233164b91975e13f2b3de84ee">
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://example.org/cr-ontology#InfrastructureComponent"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#RLMSComponent"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#UserOrientedComponent"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#constrainsFunction">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasComponent">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Component"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#consumesInformation">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#isConsumedBy">
+        <rdfs:domain rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+        <rdfs:range rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#definesUserTeam">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#UserTeam"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasDeliveryModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#DeliveryModel"/>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="http://example.org/cr-ontology">
+    <rdfs:comment xml:lang="en">Cyber Range domain ontology (OWL 2 DL) implementing the vertical (decisional/functional/informational/capability) and horizontal (infrastructure/RLMS/user-oriented) structuring aligned with a quad-level CR classification.</rdfs:comment>
+    <owl:versionInfo>0.1</owl:versionInfo>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasGovernance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Governance"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasVirtualizationTechnology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#VirtualizationTechnology"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasInfrastructureType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#InfrastructureType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasCurriculaType">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#CurriculumType"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#InstructorLed">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#LearningMethod"/>
+    <cr:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instructor-led</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:AllDisjointClasses rdf:nodeID="Na5a3c5fb4db34c5588d428f6421c978d">
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://example.org/cr-ontology#Component"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#UserEntity"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasScope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Scope"/>
+  </owl:ObjectProperty>
+  <owl:AllDisjointClasses rdf:nodeID="N7e8c30944b7949a88a1f3129bde4ad17">
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://example.org/cr-ontology#InfrastructureInformationalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#RLMSInformationalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#UserOrientedInformationalAspect"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#constrainsInformation">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#PrivateCloud">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#DeliveryModel"/>
+    <cr:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Private Cloud</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasEvaluationPractice">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#EvaluationPractice"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasUserEntity">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#UserEntity"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasLevel">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:AllDisjointClasses rdf:nodeID="N4666cd9387e94249846fd65cfd3c2a04">
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://example.org/cr-ontology#Capability"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#DecisionalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#FunctionalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#InformationalAspect"/>
+      <rdf:Description rdf:about="http://example.org/cr-ontology#Component"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:DatatypeProperty rdf:about="http://example.org/cr-ontology#hasID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="http://example.org/cr-ontology#Scope">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#UserType">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#isDecisionalAspectOf">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#isInformationalAspectOf">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://example.org/cr-ontology#InfrastructureInformationalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#isSupportedByAspect">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <rdfs:range>
+      <owl:Class rdf:nodeID="N6bfcdc5fbf474324952d74d4ee0c25b7">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://example.org/cr-ontology#FunctionalAspect"/>
+          <rdf:Description rdf:about="http://example.org/cr-ontology#InformationalAspect"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasDecisionalAspect">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+    <owl:inverseOf rdf:resource="http://example.org/cr-ontology#isDecisionalAspectOf"/>
+  </owl:ObjectProperty>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#UserType_StudentsAndProfessionals">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#UserType"/>
+    <cr:hasName>Students and cybersecurity professionals</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#UserOrientedInformationalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#CurriculumType">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#CyberRange">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N3c6657a2668e4cc5addac1e52ddf2ac1">
+        <owl:onProperty rdf:resource="http://example.org/cr-ontology#hasDecisionalAspect"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N1a105649a33241699db27bb7df3a6300">
+        <owl:onProperty rdf:resource="http://example.org/cr-ontology#hasFunctionalAspect"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N75a516c16fe04bb58a9f1ff979f7f83f">
+        <owl:onProperty rdf:resource="http://example.org/cr-ontology#hasInformationalAspect"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#RLMSFunctionalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Capability_MultiUserMultiTeamExecution">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <cr:hasName>Multi-user and multi-team exercise execution</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Capability_RemoteAccessToSandboxResources">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <cr:hasName>Remote access to sandbox resources</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Capability_IsolatedReproducibleSandboxes">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <cr:hasName>Isolated and reproducible sandbox instances</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#Domain">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#enablesCapability">
+    <rdfs:domain>
+      <owl:Class rdf:nodeID="N769b6210e2eb4ecfb00ab01d70a178c1">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://example.org/cr-ontology#FunctionalAspect"/>
+          <rdf:Description rdf:about="http://example.org/cr-ontology#InformationalAspect"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <owl:inverseOf rdf:resource="http://example.org/cr-ontology#isSupportedByAspect"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://example.org/cr-ontology#LearningMethod">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Governance_MasarykUniversity">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Governance"/>
+    <cr:hasName>Institutional governance (Masaryk University)</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#InformationalAspect"/>
+  <owl:Class rdf:about="http://example.org/cr-ontology#InfrastructureType">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Capability_ScenarioDrivenHandsOnTraining">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <cr:hasName>Scenario-driven hands-on training</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasFunctionalAspect">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#isFunctionalAspectOf">
+        <rdfs:domain rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+        <rdfs:range rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://example.org/cr-ontology#Governance">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#VirtualizationTechnology_OpenStack">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#VirtualizationTechnology"/>
+    <cr:hasName>OpenStack</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Scope_TrainingAndExercises">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Scope"/>
+    <cr:hasName>Education, professional training, and cyber defense exercises</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#VirtualizationTechnology">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#UserEntity"/>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Capability_CyberDefenseExercises">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Capability"/>
+    <cr:hasName>Cyber defense exercises</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#Capability">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nba69da60983d4e999ec9300b7e035f30">
+        <owl:onProperty rdf:resource="http://example.org/cr-ontology#isSupportedByAspect"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:nodeID="N418f2d9d68d84145be28b1bf11c1d4fa">
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://example.org/cr-ontology#FunctionalAspect"/>
+              <rdf:Description rdf:about="http://example.org/cr-ontology#InformationalAspect"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:onClass>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Didactics_HandsOnPractice">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Didactics"/>
+    <cr:hasName>Hands-on practical training</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#DeliveryModel">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InfrastructureDecisionalAspect"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://example.org/cr-ontology#hasInformationalAspect">
+    <rdfs:domain rdf:resource="http://example.org/cr-ontology#CyberRange"/>
+    <rdfs:range rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+    <owl:inverseOf rdf:resource="http://example.org/cr-ontology#isInformationalAspectOf"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://example.org/cr-ontology#InfrastructureComponent">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#Component"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#CurriculumType_ModularScenarios">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#CurriculumType"/>
+    <cr:hasName>Scenario-based modular curriculum</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#UserOrientedComponent">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#Component"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#InfrastructureFunctionalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#UserOrientedFunctionalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#FunctionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#LearningMethod_ScenarioDrivenHandsOn">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#LearningMethod"/>
+    <cr:hasName>Scenario-driven, hands-on learning</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#DeliveryModel_CloudBased">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#DeliveryModel"/>
+    <cr:hasName>Cloud-based</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#EvaluationPractice">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#InfrastructureType_OpenStackCloud">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#InfrastructureType"/>
+    <cr:hasName>OpenStack-managed cloud infrastructure</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#EvaluationPractice_MonitoringAndAnalytics">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#EvaluationPractice"/>
+    <cr:hasName>Monitoring and post-training analytics</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#RLMSInformationalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#InformationalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#DecisionalAspect"/>
+  <owl:Class rdf:about="http://example.org/cr-ontology#Purpose">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Domain_CybersecurityTraining">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Domain"/>
+    <cr:hasName>Cybersecurity training and exercises</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#Didactics">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#UserTeam">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#ScopeDecisionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#UserTeam_MultiTeamExercises">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#UserTeam"/>
+    <cr:hasName>Multi-user and multi-team exercises</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#RLMSComponent">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#Component"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#ScopeDecisionalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+  </owl:Class>
+  <owl:NamedIndividual rdf:about="http://example.org/cr-ontology#Purpose_HandsOnTrainingAndExercises">
+    <rdf:type rdf:resource="http://example.org/cr-ontology#Purpose"/>
+    <cr:hasName>Hands-on training and exercises</cr:hasName>
+  </owl:NamedIndividual>
+  <owl:Class rdf:about="http://example.org/cr-ontology#InfrastructureDecisionalAspect">
+    <rdfs:subClassOf rdf:resource="http://example.org/cr-ontology#DecisionalAspect"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://example.org/cr-ontology#Component"/>
+  <owl:Class rdf:about="http://example.org/cr-ontology#FunctionalAspect"/>
+</rdf:RDF>

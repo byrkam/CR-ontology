@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:ns1="http://www.w3.org/2002/07/owl#" xmlns:ns2="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://example.org/cr-ontology">
+
+  
+  <ns1:Ontology rdf:about="http://example.org/cr-ontology">
+    <ns2:comment xml:lang="en">Cyber Range domain ontology (OWL 2 DL) implementing the vertical (decisional/functional/informational/capability) and horizontal (infrastructure/RLMS/user-oriented) structuring aligned with a quad-level CR classification.</ns2:comment>
+    <ns1:versionInfo>0.1</ns1:versionInfo>
+  </ns1:Ontology>
+
+  
+  
+  
+
+  <ns1:Class rdf:about="#CyberRange" />
+  <ns1:Class rdf:about="#DecisionalAspect" />
+  <ns1:Class rdf:about="#FunctionalAspect" />
+  <ns1:Class rdf:about="#InformationalAspect" />
+  <ns1:Class rdf:about="#Capability" />
+  <ns1:Class rdf:about="#Component" />
+  <ns1:Class rdf:about="#UserEntity" />
+
+  
+  <ns1:Class rdf:about="#InfrastructureComponent">
+    <ns2:subClassOf rdf:resource="#Component" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#RLMSComponent">
+    <ns2:subClassOf rdf:resource="#Component" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#UserOrientedComponent">
+    <ns2:subClassOf rdf:resource="#Component" />
+  </ns1:Class>
+
+  
+  <ns1:Class rdf:about="#InfrastructureFunctionalAspect">
+    <ns2:subClassOf rdf:resource="#FunctionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#RLMSFunctionalAspect">
+    <ns2:subClassOf rdf:resource="#FunctionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#UserOrientedFunctionalAspect">
+    <ns2:subClassOf rdf:resource="#FunctionalAspect" />
+  </ns1:Class>
+
+  <ns1:Class rdf:about="#InfrastructureInformationalAspect">
+    <ns2:subClassOf rdf:resource="#InformationalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#RLMSInformationalAspect">
+    <ns2:subClassOf rdf:resource="#InformationalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#UserOrientedInformationalAspect">
+    <ns2:subClassOf rdf:resource="#InformationalAspect" />
+  </ns1:Class>
+
+  <ns1:Class rdf:about="#InfrastructureDecisionalAspect">
+    <ns2:subClassOf rdf:resource="#DecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#ScopeDecisionalAspect">
+    <ns2:subClassOf rdf:resource="#DecisionalAspect" />
+  </ns1:Class>
+
+  
+  
+  
+  
+
+  
+  <ns1:Class rdf:about="#Governance">
+    <ns2:subClassOf rdf:resource="#InfrastructureDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#DeliveryModel">
+    <ns2:subClassOf rdf:resource="#InfrastructureDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#InfrastructureType">
+    <ns2:subClassOf rdf:resource="#InfrastructureDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#VirtualizationTechnology">
+    <ns2:subClassOf rdf:resource="#InfrastructureDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#Domain">
+    <ns2:subClassOf rdf:resource="#InfrastructureDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#Scope">
+    <ns2:subClassOf rdf:resource="#InfrastructureDecisionalAspect" />
+  </ns1:Class>
+
+  
+  <ns1:Class rdf:about="#LearningMethod">
+    <ns2:subClassOf rdf:resource="#ScopeDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#EvaluationPractice">
+    <ns2:subClassOf rdf:resource="#ScopeDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#CurriculumType">
+    <ns2:subClassOf rdf:resource="#ScopeDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#Purpose">
+    <ns2:subClassOf rdf:resource="#ScopeDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#Didactics">
+    <ns2:subClassOf rdf:resource="#ScopeDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#UserType">
+    <ns2:subClassOf rdf:resource="#ScopeDecisionalAspect" />
+  </ns1:Class>
+  <ns1:Class rdf:about="#UserTeam">
+    <ns2:subClassOf rdf:resource="#ScopeDecisionalAspect" />
+  </ns1:Class>
+
+  
+  
+  
+
+  
+  <ns1:AllDisjointClasses>
+    <ns1:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#DecisionalAspect" />
+      <rdf:Description rdf:about="#FunctionalAspect" />
+      <rdf:Description rdf:about="#InformationalAspect" />
+    </ns1:members>
+  </ns1:AllDisjointClasses>
+
+  
+  <ns1:AllDisjointClasses>
+    <ns1:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#InfrastructureDecisionalAspect" />
+      <rdf:Description rdf:about="#ScopeDecisionalAspect" />
+    </ns1:members>
+  </ns1:AllDisjointClasses>
+
+
+  
+  <ns1:AllDisjointClasses>
+    <ns1:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Capability" />
+      <rdf:Description rdf:about="#DecisionalAspect" />
+      <rdf:Description rdf:about="#FunctionalAspect" />
+      <rdf:Description rdf:about="#InformationalAspect" />
+      <rdf:Description rdf:about="#Component" />
+    </ns1:members>
+  </ns1:AllDisjointClasses>
+
+  <ns1:AllDisjointClasses>
+    <ns1:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Component" />
+      <rdf:Description rdf:about="#UserEntity" />
+    </ns1:members>
+  </ns1:AllDisjointClasses>
+
+  
+  <ns1:AllDisjointClasses>
+    <ns1:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#InfrastructureFunctionalAspect" />
+      <rdf:Description rdf:about="#RLMSFunctionalAspect" />
+      <rdf:Description rdf:about="#UserOrientedFunctionalAspect" />
+    </ns1:members>
+  </ns1:AllDisjointClasses>
+
+  
+  <ns1:AllDisjointClasses>
+    <ns1:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#InfrastructureInformationalAspect" />
+      <rdf:Description rdf:about="#RLMSInformationalAspect" />
+      <rdf:Description rdf:about="#UserOrientedInformationalAspect" />
+    </ns1:members>
+  </ns1:AllDisjointClasses>
+
+  
+  <ns1:AllDisjointClasses>
+    <ns1:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#InfrastructureComponent" />
+      <rdf:Description rdf:about="#RLMSComponent" />
+      <rdf:Description rdf:about="#UserOrientedComponent" />
+    </ns1:members>
+  </ns1:AllDisjointClasses>
+
+  
+  
+  
+
+  
+  <ns1:ObjectProperty rdf:about="#hasDecisionalAspect">
+    <ns2:domain rdf:resource="#CyberRange" />
+    <ns2:range rdf:resource="#DecisionalAspect" />
+    <ns1:inverseOf rdf:resource="#isDecisionalAspectOf" />
+  </ns1:ObjectProperty>
+  <ns1:ObjectProperty rdf:about="#isDecisionalAspectOf">
+    <ns2:domain rdf:resource="#DecisionalAspect" />
+    <ns2:range rdf:resource="#CyberRange" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasFunctionalAspect">
+    <ns2:domain rdf:resource="#CyberRange" />
+    <ns2:range rdf:resource="#FunctionalAspect" />
+    <ns1:inverseOf rdf:resource="#isFunctionalAspectOf" />
+  </ns1:ObjectProperty>
+  <ns1:ObjectProperty rdf:about="#isFunctionalAspectOf">
+    <ns2:domain rdf:resource="#FunctionalAspect" />
+    <ns2:range rdf:resource="#CyberRange" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasInformationalAspect">
+    <ns2:domain rdf:resource="#CyberRange" />
+    <ns2:range rdf:resource="#InformationalAspect" />
+    <ns1:inverseOf rdf:resource="#isInformationalAspectOf" />
+  </ns1:ObjectProperty>
+  <ns1:ObjectProperty rdf:about="#isInformationalAspectOf">
+    <ns2:domain rdf:resource="#InformationalAspect" />
+    <ns2:range rdf:resource="#CyberRange" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#supportsCapability">
+    <ns2:domain rdf:resource="#CyberRange" />
+    <ns2:range rdf:resource="#Capability" />
+  </ns1:ObjectProperty>
+
+  
+  <ns1:ObjectProperty rdf:about="#constrainsFunction">
+    <ns2:domain rdf:resource="#DecisionalAspect" />
+    <ns2:range rdf:resource="#FunctionalAspect" />
+  </ns1:ObjectProperty>
+  <ns1:ObjectProperty rdf:about="#constrainsInformation">
+    <ns2:domain rdf:resource="#DecisionalAspect" />
+    <ns2:range rdf:resource="#InformationalAspect" />
+  </ns1:ObjectProperty>
+  <ns1:ObjectProperty rdf:about="#constrainsUsers">
+    <ns2:domain rdf:resource="#DecisionalAspect" />
+    <ns2:range rdf:resource="#UserEntity" />
+  </ns1:ObjectProperty>
+
+  
+  <ns1:ObjectProperty rdf:about="#producesInformation">
+    <ns2:domain rdf:resource="#FunctionalAspect" />
+    <ns2:range rdf:resource="#InformationalAspect" />
+    <ns1:inverseOf rdf:resource="#isProducedBy" />
+  </ns1:ObjectProperty>
+  <ns1:ObjectProperty rdf:about="#isProducedBy">
+    <ns2:domain rdf:resource="#InformationalAspect" />
+    <ns2:range rdf:resource="#FunctionalAspect" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#consumesInformation">
+    <ns2:domain rdf:resource="#FunctionalAspect" />
+    <ns2:range rdf:resource="#InformationalAspect" />
+    <ns1:inverseOf rdf:resource="#isConsumedBy" />
+  </ns1:ObjectProperty>
+  <ns1:ObjectProperty rdf:about="#isConsumedBy">
+    <ns2:domain rdf:resource="#InformationalAspect" />
+    <ns2:range rdf:resource="#FunctionalAspect" />
+  </ns1:ObjectProperty>
+
+  
+  <ns1:ObjectProperty rdf:about="#enablesCapability">
+    <ns2:domain>
+      <ns1:Class>
+        <ns1:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="#FunctionalAspect" />
+          <rdf:Description rdf:about="#InformationalAspect" />
+        </ns1:unionOf>
+      </ns1:Class>
+    </ns2:domain>
+    <ns2:range rdf:resource="#Capability" />
+    <ns1:inverseOf rdf:resource="#isSupportedByAspect" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#isSupportedByAspect">
+    <ns2:domain rdf:resource="#Capability" />
+    <ns2:range>
+      <ns1:Class>
+        <ns1:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="#FunctionalAspect" />
+          <rdf:Description rdf:about="#InformationalAspect" />
+        </ns1:unionOf>
+      </ns1:Class>
+    </ns2:range>
+  </ns1:ObjectProperty>
+
+  
+  <ns1:ObjectProperty rdf:about="#hasComponent">
+    <ns2:domain rdf:resource="#FunctionalAspect" />
+    <ns2:range rdf:resource="#Component" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasUserEntity">
+    <ns2:domain rdf:resource="#CyberRange" />
+    <ns2:range rdf:resource="#UserEntity" />
+  </ns1:ObjectProperty>
+
+  
+  <ns1:ObjectProperty rdf:about="#hasGovernance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <ns2:domain rdf:resource="#InfrastructureDecisionalAspect" />
+    <ns2:range rdf:resource="#Governance" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasDeliveryModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <ns2:domain rdf:resource="#InfrastructureDecisionalAspect" />
+    <ns2:range rdf:resource="#DeliveryModel" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasInfrastructureType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <ns2:domain rdf:resource="#InfrastructureDecisionalAspect" />
+    <ns2:range rdf:resource="#InfrastructureType" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasVirtualizationTechnology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <ns2:domain rdf:resource="#InfrastructureDecisionalAspect" />
+    <ns2:range rdf:resource="#VirtualizationTechnology" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <ns2:domain rdf:resource="#InfrastructureDecisionalAspect" />
+    <ns2:range rdf:resource="#Domain" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasScope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <ns2:domain rdf:resource="#InfrastructureDecisionalAspect" />
+    <ns2:range rdf:resource="#Scope" />
+  </ns1:ObjectProperty>
+
+  
+  <ns1:ObjectProperty rdf:about="#hasLearningMethod">
+    <ns2:domain rdf:resource="#ScopeDecisionalAspect" />
+    <ns2:range rdf:resource="#LearningMethod" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasEvaluationPractice">
+    <ns2:domain rdf:resource="#ScopeDecisionalAspect" />
+    <ns2:range rdf:resource="#EvaluationPractice" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasCurriculaType">
+    <ns2:domain rdf:resource="#ScopeDecisionalAspect" />
+    <ns2:range rdf:resource="#CurriculumType" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#hasPurpose">
+    <ns2:domain rdf:resource="#ScopeDecisionalAspect" />
+    <ns2:range rdf:resource="#Purpose" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#targetsDidactics">
+    <ns2:domain rdf:resource="#ScopeDecisionalAspect" />
+    <ns2:range rdf:resource="#Didactics" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#definesUserType">
+    <ns2:domain rdf:resource="#ScopeDecisionalAspect" />
+    <ns2:range rdf:resource="#UserType" />
+  </ns1:ObjectProperty>
+
+  <ns1:ObjectProperty rdf:about="#definesUserTeam">
+    <ns2:domain rdf:resource="#ScopeDecisionalAspect" />
+    <ns2:range rdf:resource="#UserTeam" />
+  </ns1:ObjectProperty>
+
+  
+  
+  
+
+  <ns1:DatatypeProperty rdf:about="#hasName">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </ns1:DatatypeProperty>
+
+  <ns1:DatatypeProperty rdf:about="#hasDescription">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </ns1:DatatypeProperty>
+
+  <ns1:DatatypeProperty rdf:about="#hasID">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </ns1:DatatypeProperty>
+
+  <ns1:DatatypeProperty rdf:about="#hasVersion">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </ns1:DatatypeProperty>
+
+  <ns1:DatatypeProperty rdf:about="#hasPriority">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+  </ns1:DatatypeProperty>
+
+  <ns1:DatatypeProperty rdf:about="#hasLevel">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+  </ns1:DatatypeProperty>
+
+  <ns1:DatatypeProperty rdf:about="#hasTimestamp">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime" />
+  </ns1:DatatypeProperty>
+
+  <ns1:DatatypeProperty rdf:about="#hasDuration">
+    <ns2:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration" />
+  </ns1:DatatypeProperty>
+
+  
+  
+  
+
+  
+  <ns1:Class rdf:about="#CyberRange">
+    <ns2:subClassOf>
+      <ns1:Restriction>
+        <ns1:onProperty rdf:resource="#hasDecisionalAspect" />
+        <ns1:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns1:minQualifiedCardinality>
+        <ns1:onClass rdf:resource="#DecisionalAspect" />
+      </ns1:Restriction>
+    </ns2:subClassOf>
+    <ns2:subClassOf>
+      <ns1:Restriction>
+        <ns1:onProperty rdf:resource="#hasFunctionalAspect" />
+        <ns1:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns1:minQualifiedCardinality>
+        <ns1:onClass rdf:resource="#FunctionalAspect" />
+      </ns1:Restriction>
+    </ns2:subClassOf>
+    <ns2:subClassOf>
+      <ns1:Restriction>
+        <ns1:onProperty rdf:resource="#hasInformationalAspect" />
+        <ns1:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns1:minQualifiedCardinality>
+        <ns1:onClass rdf:resource="#InformationalAspect" />
+      </ns1:Restriction>
+    </ns2:subClassOf>
+  </ns1:Class>
+
+  
+  <ns1:Class rdf:about="#Capability">
+    <ns2:subClassOf>
+      <ns1:Restriction>
+        <ns1:onProperty rdf:resource="#isSupportedByAspect" />
+        <ns1:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</ns1:minQualifiedCardinality>
+        <ns1:onClass>
+          <ns1:Class>
+            <ns1:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="#FunctionalAspect" />
+              <rdf:Description rdf:about="#InformationalAspect" />
+            </ns1:unionOf>
+          </ns1:Class>
+        </ns1:onClass>
+      </ns1:Restriction>
+    </ns2:subClassOf>
+  </ns1:Class>
+
+  
+  
+  
+
+  
+  <ns1:ObjectProperty rdf:about="#supportsCapability">
+    <ns1:propertyChainAxiom rdf:parseType="Collection">
+      <rdf:Description rdf:about="#hasFunctionalAspect" />
+      <rdf:Description rdf:about="#enablesCapability" />
+    </ns1:propertyChainAxiom>
+  </ns1:ObjectProperty>
+
+  
+  
+  
+  
+
+  </rdf:RDF>
